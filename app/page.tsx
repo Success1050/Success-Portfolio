@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Download, Github, Linkedin, Mail, ExternalLink, Code2, Smartphone, Globe, Database, Terminal, Palette, Send, MessageCircle, Twitter } from 'lucide-react';
+import { Menu, X, Download, Github, Linkedin, Mail, ExternalLink, Code2, Smartphone, Globe, Database, Terminal, Palette, Send, MessageCircle, Twitter, Computer } from 'lucide-react';
 
 export default function Portfolio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,11 +40,11 @@ export default function Portfolio() {
   // CV Download Handler
   const handleDownloadCV = () => {
     // Replace this URL with your actual CV location
-    const cvUrl = '/your-cv.pdf'; // Or use a cloud storage link like: 'https://drive.google.com/uc?export=download&id=YOUR_FILE_ID'
+    const cvUrl = '/emmanuel-success.pdf'; 
     
     const link = document.createElement('a');
     link.href = cvUrl;
-    link.download = 'YourName_CV.pdf'; // This will be the downloaded file name
+    link.download = 'emmanuel-success.pdf'; // This will be the downloaded file name
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -55,6 +55,7 @@ export default function Portfolio() {
     { icon: <Smartphone className="w-8 h-8" />, title: "Mobile App Development", desc: "Native and cross-platform mobile applications using React Native and Flutterflow" },
     { icon: <Globe className="w-8 h-8" />, title: "Web Development", desc: "Modern, responsive web applications using Next.js, React, and TypeScript" },
     { icon: <Database className="w-8 h-8" />, title: "Backend Development", desc: "Scalable APIs and server-side solutions with Node.js, python and databases" },
+    { icon: <Computer className="w-8 h-8" />, title: "AI Automation", desc: "Automate complex and repitative business tasks with N8N" },
   ];
 
   const webProjects = [
@@ -67,9 +68,9 @@ export default function Portfolio() {
   ];
 
   const mobileProjects = [
-    { title: "StudentSpark", desc: "A mobile application that makes studying easier for students", tech: ["React Native", "Supabase", "Expo"], image: "/7.png" },
-    { title: "Vibemate", desc: "Connect and share moments with friends and partners", tech: ["React Native", "Expo", "Supabase"], image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=500&h=300&fit=crop" },
-    { title: "Food Delivery App", desc: "Order food from local restaurants", tech: ["Flutter", "Firebase", "Google Maps"], image: "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=500&h=300&fit=crop" },
+    { title: "StudentSpark", desc: "A mobile application that makes studying easier for students", tech: ["React Native", "Supabase", "Expo", "Nodejs"], image: "/7.png" },
+    { title: "Vibemate", desc: "Connect and share moments with friends and partners", tech: ["React Native", "Expo", "Supabase", "Nodejs"], image: "/8.png" },
+    { title: "HireLocals", desc: "Connect and hire different services from professional to local services", tech: ["React Native", "Expo", "Nodejs", "Prisma", "Postgresql"], image: "/9.png" },
   ];
 
   const allProjects = [...webProjects, ...mobileProjects];
@@ -80,21 +81,22 @@ export default function Portfolio() {
     return allProjects;
   };
 
+
   const experiences = [
-    { role: "Senior Developer", company: "Company Name", period: "2022 - Present", desc: "Led development of multiple web and mobile applications" },
-    { role: "Full Stack Developer", company: "Company Name", period: "2020 - 2022", desc: "Developed and maintained client projects" },
-    { role: "Junior Developer", company: "Company Name", period: "2018 - 2020", desc: "Built responsive web applications" },
+    { role: "Mobile App Developer", company: "NeoCloud", period: "April 2024 – May 2025"},
+    { role: "Full Stack Developer", company: "Threndin Community", period: "Mar 2023 – Nov 2023"},
+    { role: "Senior Frontend Web Developer", company: "LEAD Software Community", period: "Jan 2021 – Feb 2023"},
   ];
 
   const skills = [
-    { category: "Frontend", items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "HTML/CSS"] },
-    { category: "Mobile", items: ["React Native", "Flutter", "iOS", "Android"] },
+    { category: "Frontend", items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "HTML/CSS", "Wordpress"] },
+    { category: "Mobile", items: ["React Native", "Expo", "Flutterflow", "iOS", "Android"] },
     { category: "Backend", items: ["Node.js", "Express", "PostgreSQL", "MongoDB", "REST APIs"] },
-    { category: "Tools", items: ["Git", "Docker", "Figma", "VS Code", "Postman"] },
+    { category: "Tools", items: ["Git", "Docker", "Figma", "VS Code", "Postman", "Github", "Prisma ORM", "Supabase"] },
   ];
 
   return (
-    <div className="bg-slate-950 text-white min-h-screen">
+    <div className="bg-slate-950 text-white min-h-screen overflow-hidden">
       {/* Navigation */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-slate-900/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -168,13 +170,13 @@ export default function Portfolio() {
             </button>
           </div>
           <div className="flex gap-6 justify-center mt-12">
-            <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+            <a href="https://github.com/Success1050" className="text-gray-400 hover:text-cyan-400 transition-colors">
               <Github className="w-6 h-6" />
             </a>
-            <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+            <a href="https://www.linkedin.com/in/emmanuel-success" className="text-gray-400 hover:text-cyan-400 transition-colors">
               <Linkedin className="w-6 h-6" />
             </a>
-            <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+            <a href="mailto:emmanuelekwunife58@gmail.com" className="text-gray-400 hover:text-cyan-400 transition-colors">
               <Mail className="w-6 h-6" />
             </a>
           </div>
@@ -190,13 +192,13 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 text-gray-300">
               <p className="text-lg leading-relaxed">
-                I'm a passionate developer specializing in creating exceptional digital experiences. With expertise in both mobile and web development, I bring ideas to life using cutting-edge technologies.
+                My name is Emmanuel Success Ekwunife, I'm a passionate developer specializing in creating exceptional digital experiences. With expertise in both mobile and web development, I bring ideas to life using cutting-edge technologies.
               </p>
               <p className="text-lg leading-relaxed">
                 My approach combines technical excellence with creative problem-solving, ensuring that every project not only meets requirements but exceeds expectations.
               </p>
               <p className="text-lg leading-relaxed">
-                When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, and staying up-to-date with the latest industry trends.
+                When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects,staying up-to-date with the latest industry trends and playing scrabble.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-6">
@@ -321,6 +323,9 @@ export default function Portfolio() {
           <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
             Experience
           </h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            Download my CV to see the full work experience
+          </h2>
           <div className="space-y-8">
             {experiences.map((exp, idx) => (
               <div key={idx} className="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:border-cyan-500/50 transition-all">
@@ -331,7 +336,6 @@ export default function Portfolio() {
                   </div>
                   <span className="text-gray-400 mt-2 md:mt-0">{exp.period}</span>
                 </div>
-                <p className="text-gray-400">{exp.desc}</p>
               </div>
             ))}
           </div>
@@ -376,69 +380,69 @@ export default function Portfolio() {
           
           <div className="grid md:grid-cols-2 gap-6 mb-12">
             {/* Contact Cards */}
-            <a href="mailto:your.email@example.com" className="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all group">
+            <a href="mailto:emmanuelekwunife58@gmail.com" className="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all group">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors">
+                <div className="p-3 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors shrink-0">
                   <Mail className="w-6 h-6 text-cyan-400" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h3 className="text-lg font-bold mb-1">Email</h3>
-                  <p className="text-gray-400">your.email@example.com</p>
+                  <p className="text-gray-400 break-all">emmanuelekwunife58@gmail.com</p>
                 </div>
               </div>
             </a>
 
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all group">
+            <a href="https://wa.me/2348128032967" target="_blank" rel="noopener noreferrer" className="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all group">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors">
+                <div className="p-3 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors shrink-0">
                   <MessageCircle className="w-6 h-6 text-cyan-400" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h3 className="text-lg font-bold mb-1">WhatsApp</h3>
-                  <p className="text-gray-400">+1 234 567 890</p>
+                  <p className="text-gray-400 break-all">+234 812 803 2967</p>
                 </div>
               </div>
             </a>
 
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all group">
+            <a href="https://www.linkedin.com/in/emmanuel-success" target="_blank" rel="noopener noreferrer" className="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all group">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors">
+                <div className="p-3 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors shrink-0">
                   <Linkedin className="w-6 h-6 text-cyan-400" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h3 className="text-lg font-bold mb-1">LinkedIn</h3>
-                  <p className="text-gray-400">linkedin.com/in/yourprofile</p>
+                  <p className="text-gray-400 break-all">linkedin.com/in/emmanuel-success</p>
                 </div>
               </div>
             </a>
 
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all group">
+            <a href="https://github.com/Success1050" target="_blank" rel="noopener noreferrer" className="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all group">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors">
+                <div className="p-3 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors shrink-0">
                   <Github className="w-6 h-6 text-cyan-400" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h3 className="text-lg font-bold mb-1">GitHub</h3>
-                  <p className="text-gray-400">github.com/yourusername</p>
+                  <p className="text-gray-400 break-all">github.com/Success1050</p>
                 </div>
               </div>
             </a>
 
-            <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer" className="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all group">
+            <a href="https://x.com/success200431" target="_blank" rel="noopener noreferrer" className="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all group">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors">
+                <div className="p-3 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors shrink-0">
                   <Twitter className="w-6 h-6 text-cyan-400" />
                 </div>
-                <div>
-                  <h3 className="text-lg font-bold mb-1">Twitter</h3>
-                  <p className="text-gray-400">@yourhandle</p>
+                <div className="min-w-0">
+                  <h3 className="text-lg font-bold mb-1">X</h3>
+                  <p className="text-gray-400 break-all">@success200431</p>
                 </div>
               </div>
             </a>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-slate-800/50 p-8 rounded-lg border border-slate-700">
+          {/* <div className="bg-slate-800/50 p-8 rounded-lg border border-slate-700">
             <h3 className="text-2xl font-bold mb-6 text-center">Send Me a Message</h3>
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
@@ -483,7 +487,7 @@ export default function Portfolio() {
                 Send Message
               </button>
             </form>
-          </div>
+          </div> */}
         </div>
       </section>
 
