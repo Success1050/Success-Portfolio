@@ -92,7 +92,7 @@ export default function Portfolio() {
     { category: "Frontend", items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "HTML/CSS", "Wordpress"] },
     { category: "Mobile", items: ["React Native", "Expo", "Flutterflow", "iOS", "Android"] },
     { category: "Backend", items: ["Node.js", "Express", "PostgreSQL", "MongoDB", "REST APIs"] },
-    { category: "Tools", items: ["Git", "Docker", "Figma", "VS Code", "Postman", "Github", "Prisma ORM", "Supabase"] },
+    { category: "Tools", items: ["Git", "Docker", "N8N", "Figma", "VS Code", "Postman", "Github", "Prisma ORM", "Supabase"] },
   ];
 
   return (
