@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Download, Github, Linkedin, Mail, ExternalLink, Code2, Smartphone, Globe, Database, Terminal, Palette, Send, MessageCircle, Twitter, Computer } from 'lucide-react';
+import { Menu, X, Download, Github, Linkedin, Mail, ExternalLink, Code2, Smartphone, Globe, Database, Terminal, Palette, Send, MessageCircle, Twitter, Computer, Briefcase } from 'lucide-react';
 
 export default function Portfolio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,7 +12,7 @@ export default function Portfolio() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
+
       const sections = ['home', 'about', 'services', 'projects', 'experience', 'skills', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
@@ -29,7 +29,7 @@ export default function Portfolio() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id:string) => {
+  const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -40,8 +40,8 @@ export default function Portfolio() {
   // CV Download Handler
   const handleDownloadCV = () => {
     // Replace this URL with your actual CV location
-    const cvUrl = '/emmanuel-success.pdf'; 
-    
+    const cvUrl = '/emmanuel-success.pdf';
+
     const link = document.createElement('a');
     link.href = cvUrl;
     link.download = 'emmanuel-success.pdf'; // This will be the downloaded file name
@@ -74,7 +74,7 @@ export default function Portfolio() {
   ];
 
   const allProjects = [...webProjects, ...mobileProjects];
-  
+
   const getFilteredProjects = () => {
     if (activeProjectTab === 'web') return webProjects;
     if (activeProjectTab === 'mobile') return mobileProjects;
@@ -83,9 +83,9 @@ export default function Portfolio() {
 
 
   const experiences = [
-    { role: "Mobile App Developer", company: "NeoCloud", period: "April 2024 – May 2025"},
-    { role: "Full Stack Developer", company: "Threndin Community", period: "Mar 2023 – Nov 2023"},
-    { role: "Senior Frontend Web Developer", company: "LEAD Software Community", period: "Jan 2021 – Feb 2023"},
+    { role: "Mobile App Developer", company: "NeoCloud", period: "April 2024 – May 2025" },
+    { role: "Full Stack Developer", company: "Threndin Community", period: "Mar 2023 – Nov 2023" },
+    { role: "Senior Frontend Web Developer", company: "LEAD Software Community", period: "Jan 2021 – Feb 2023" },
   ];
 
   const skills = [
@@ -104,7 +104,7 @@ export default function Portfolio() {
             <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
               Portfolio
             </div>
-            
+
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
               {['home', 'about', 'services', 'projects', 'experience', 'skills', 'contact'].map((item) => (
@@ -249,38 +249,35 @@ export default function Portfolio() {
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
             Projects
           </h2>
-          
+
           {/* Filter Tabs */}
           <div className="flex justify-center mb-12">
             <div className="inline-flex bg-slate-800/50 p-1 rounded-lg border border-slate-700">
               <button
                 onClick={() => setActiveProjectTab('all')}
-                className={`px-6 py-2 rounded-md transition-all ${
-                  activeProjectTab === 'all'
-                    ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg'
-                    : 'text-gray-400 hover:text-white'
-                }`}
+                className={`px-6 py-2 rounded-md transition-all ${activeProjectTab === 'all'
+                  ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg'
+                  : 'text-gray-400 hover:text-white'
+                  }`}
               >
                 All Projects
               </button>
               <button
                 onClick={() => setActiveProjectTab('web')}
-                className={`px-6 py-2 rounded-md transition-all flex items-center gap-2 ${
-                  activeProjectTab === 'web'
-                    ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg'
-                    : 'text-gray-400 hover:text-white'
-                }`}
+                className={`px-6 py-2 rounded-md transition-all flex items-center gap-2 ${activeProjectTab === 'web'
+                  ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg'
+                  : 'text-gray-400 hover:text-white'
+                  }`}
               >
                 <Globe className="w-4 h-4" />
                 Web Dev
               </button>
               <button
                 onClick={() => setActiveProjectTab('mobile')}
-                className={`px-6 py-2 rounded-md transition-all flex items-center gap-2 ${
-                  activeProjectTab === 'mobile'
-                    ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg'
-                    : 'text-gray-400 hover:text-white'
-                }`}
+                className={`px-6 py-2 rounded-md transition-all flex items-center gap-2 ${activeProjectTab === 'mobile'
+                  ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg'
+                  : 'text-gray-400 hover:text-white'
+                  }`}
               >
                 <Smartphone className="w-4 h-4" />
                 Mobile Apps
@@ -377,7 +374,7 @@ export default function Portfolio() {
               Have a project in mind or just want to chat? Feel free to reach out through any of these channels!
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-6 mb-12">
             {/* Contact Cards */}
             <a href="mailto:emmanuelekwunife58@gmail.com" className="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all group">
@@ -436,6 +433,18 @@ export default function Portfolio() {
                 <div className="min-w-0">
                   <h3 className="text-lg font-bold mb-1">X</h3>
                   <p className="text-gray-400 break-all">@success200431</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="https://www.fiverr.com/users/collinsonyemach/portfolio" target="_blank" rel="noopener noreferrer" className="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all group">
+              <div className="flex items-center gap-4">
+                <div className="p-3 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors shrink-0">
+                  <Briefcase className="w-6 h-6 text-cyan-400" />
+                </div>
+                <div className="min-w-0">
+                  <h3 className="text-lg font-bold mb-1">Fiverr</h3>
+                  <p className="text-gray-400 break-all">Hire me on Fiverr</p>
                 </div>
               </div>
             </a>
