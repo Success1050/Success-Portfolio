@@ -40,11 +40,11 @@ export default function Portfolio() {
   // CV Download Handler
   const handleDownloadCV = () => {
     // Replace this URL with your actual CV location
-    const cvUrl = '/emmanuel-success.pdf';
+    const cvUrl = '/emmanuel_ekwunife_fullstack.pdf';
 
     const link = document.createElement('a');
     link.href = cvUrl;
-    link.download = 'emmanuel-success.pdf'; // This will be the downloaded file name
+    link.download = 'emmanuel_ekwunife_fullstack.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -68,7 +68,13 @@ export default function Portfolio() {
   ];
 
   const mobileProjects = [
-    { title: "StudentSpark", desc: "A mobile application that makes studying easier for students", tech: ["React Native", "Supabase", "Expo", "Nodejs"], image: "/7.png" },
+    {
+      title: "StudentSpark",
+      desc: "A mobile application that makes studying easier for students",
+      tech: ["React Native", "Supabase", "Expo", "Nodejs"],
+      image: "/7.png",
+      playStoreLink: "https://play.google.com/store/apps/details?id=com.john_1050.student_assistant"
+    },
     { title: "Vibemate", desc: "Connect and share moments with friends and partners", tech: ["React Native", "Expo", "Supabase", "Nodejs"], image: "/8.png" },
     { title: "HireLocals", desc: "Connect and hire different services from professional to local services", tech: ["React Native", "Expo", "Nodejs", "Prisma", "Postgresql"], image: "/9.png" },
   ];
@@ -90,8 +96,8 @@ export default function Portfolio() {
 
   const skills = [
     { category: "Frontend", items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "HTML/CSS", "Wordpress"] },
-    { category: "Mobile", items: ["React Native", "Expo", "Flutterflow", "iOS", "Android"] },
-    { category: "Backend", items: ["Node.js", "Express", "PostgreSQL", "MongoDB", "REST APIs"] },
+    { category: "Mobile", items: ["React Native", "Expo", "iOS", "Android"] },
+    { category: "Backend", items: ["Node.js", "Express", "PostgreSQL", "MongoDB", "REST APIs", "Python"] },
     { category: "Tools", items: ["Git", "Docker", "N8N", "Figma", "VS Code", "Postman", "Github", "Prisma ORM", "Supabase"] },
   ];
 
@@ -293,7 +299,14 @@ export default function Portfolio() {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-xl font-bold">{project.title}</h3>
+                    {(project as any).playStoreLink && (
+                      <span className="px-2 py-1 bg-green-500/10 text-green-400 rounded text-[10px] font-bold uppercase tracking-wider border border-green-500/20">
+                        Play Store
+                      </span>
+                    )}
+                  </div>
                   <p className="text-gray-400 mb-4">{project.desc}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech, i) => (
@@ -305,6 +318,11 @@ export default function Portfolio() {
                   {(project as any).link && (project as any).link !== '#' && (
                     <a href={(project as any).link} className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors">
                       View Project <ExternalLink className="w-4 h-4" />
+                    </a>
+                  )}
+                  {(project as any).playStoreLink && (
+                    <a href={(project as any).playStoreLink} className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors mt-2 block">
+                      Get it on Play Store <Smartphone className="w-4 h-4" />
                     </a>
                   )}
                 </div>
