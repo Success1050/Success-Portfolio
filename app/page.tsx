@@ -199,7 +199,7 @@ export default function Portfolio() {
             <div className="flex flex-col items-center md:items-start space-y-6">
               <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto md:mx-0">
                 <img 
-                  src="http://localhost:8080/tasks/upload/upload-1784399850132-602084628.jpg"
+                  src="/profile.jpg"
                   alt="Emmanuel Success Ekwunife"
                   className="rounded-full object-cover w-full h-full border-4 border-cyan-500/50 shadow-2xl shadow-cyan-500/20"
                 />
